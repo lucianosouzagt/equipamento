@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+}
+footer{
+	bottom: 0;
+	position: fixed;
+	text-align: center;
+	font-size: 11px;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.button {
+	display: inline-block;
+}
+.login-area {
+	background-color: #ffffff;
+	padding: 10px;
+	border-radius: 10px;
+	width: 300px;
+	margin-top: 20px;
+	margin: auto;
+}
+.topo {
+	background-color: #ff0000;
+}
