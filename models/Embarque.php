@@ -109,4 +109,27 @@ class Embarque extends Model {
 
 		return true;
 	}
+
+	private function verifyFuncionario($chapa){
+
+		return true;
+	}
+
+	public function addFuncionario($chapa, $name, $cpf, $rg, $email) {
+
+		if ($this->verifyFuncionario($chapa)) {
+			$sql = "INSERT INTO funcionarios (chapa, name, cpf, rg, email) VALUES (:chapa, :name, :cpf, :rg, :email)";
+			$sql = $this->db->prepare($sql);
+			$sql->bindValue(":chapa",$chapa);
+			$sql->bindValue(":name",$name);
+			$sql->bindValue(":cpf",$cpf);
+			$sql->bindValue(":rg",$rg);
+			$sql->bindValue(":email",$email);
+			$sql->execute();
+
+		} else {
+			return false;
+		}
+
+	}
 }

@@ -49,7 +49,7 @@ class Equipamentos extends Model {
 	public function addEquipamento($bp, $sn, $marca, $modelo, $data) {
 
 		if ($this->verifyEquipamento($bp)) {
-			$sql = "INSERT INTO equipamentos (bp, sn, marca, modelo, data)VALUES (:bp, :sn, :marca, :modelo, :data)";
+			$sql = "INSERT INTO equipamentos (bp, sn, marca, modelo, data) VALUES (:bp, :sn, :marca, :modelo, :data)";
 			$sql = $this->db->prepare($sql);
 			$sql->bindValue(":bp",$bp);
 			$sql->bindValue(":sn",$sn);
