@@ -32,7 +32,7 @@
 				    	  <li><a href="<?php echo BASE_URL; ?>emprestimo/desembarque/">Devolução de Equipamento</a></li>		          
 				    	</ul>
 				  	</li>
-				  	<li><a href="#">Relatorio</a></li>
+				  	<li><a href="<?php echo BASE_URL;?>report/">Relatorio</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 				   	<li><a href="<?php echo BASE_URL; ?>login/logout/">Logout</a></li>

@@ -13,6 +13,9 @@ class reportController extends Controller {
 
 	public function index() {
 		$data = array();
+		$e =new Embarque();
+
+        $data['list'] = $e->getAllEmbarque();
 		
 		$this->loadTemplate('report', $data);
 	}

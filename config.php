@@ -12,10 +12,10 @@ if(ENVIRONMENT == 'development') {
 	$config['dbuser'] = 'root';
 	$config['dbpass'] = '';
 } else {
-	define("BASE_URL", "http://equipamento.etm.srv.br/");
+	define("BASE_URL", "http://sparrows.etm.srv.br/sparrows/");
 	$config['dbname'] = 'sparrows';
 	$config['host'] = 'sparrows.mysql.dbaas.com.br';
-	$config['dbuser'] = 'root';
+	$config['dbuser'] = 'sparrows';
 	$config['dbpass'] = 'Admin@123';
 }
 
