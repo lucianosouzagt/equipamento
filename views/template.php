@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
 	</head>
 	<body>
-		<nav class="navbar navbar-inverse">
+		<!--<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="<?php echo BASE_URL; ?>">SPARROWS BSM</a>
@@ -38,7 +38,47 @@
 				   	<li><a href="<?php echo BASE_URL; ?>login/logout/">Logout</a></li>
 				</ul>
 			</div>
-		</nav>
+		</nav>-->
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <!-- Brand -->
+			    <a class="navbar-brand" href="<?php echo BASE_URL; ?>">Sparrows BSM</a>
+
+			    <!-- Toggler/collapsibe Button -->
+			    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			        <span class="navbar-toggler-icon"></span>
+			    </button>
+
+			    <!-- Navbar links -->
+			    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			        <ul class="navbar-nav">
+			            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cadastro</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>equipamentos/addequi/">Equipamentos</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>funcionarios/addfunc/">Funcionarios</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>usuarios/adduser">Usuarios</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Movimentação</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>emprestimo/">Emprestimo de Equipamentos</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>emprestimo/desembarque/">Devolução de Equipamentos</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo BASE_URL;?>report/">Relatorio</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>login/logout/">Logout</a>
+                        </li>
+			    	</ul>
+			    </div> 
+			</nav>
+		</div>
 		<div class="container">
 		<?php
 		$this->loadViewInTemplate($viewName, $viewData);
