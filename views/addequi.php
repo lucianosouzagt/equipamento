@@ -22,13 +22,16 @@
     	<label for="date">Data:</label>
     	<input type="date" class="form-control" name="date" id="date" required/>
  	</div>
- 	<div class="form-group">
- 	<div class="row">
- 	<div class="col-md-11">	
-		<button class="btn btn-info" type="submit">Salvar</button>
-	</div>
-	<div class="col-md-1">
-		<button class="btn btn-default" type="submit"><a href="<?php echo BASE_URL; ?>">Voltar</a></button>
-	</div>
-	</div>
+ 	<div class="form-row">
+        <div class="col-md-6"> 
+            <div class="form-group">
+                <button class="btn btn-block btn-info" type="submit">Salvar</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <a class="btn btn-block btn-secondary" href="<?php echo BASE_URL; ?>">Voltar</a>
+            </div>
+        </div>
+    </div>
 </form>
