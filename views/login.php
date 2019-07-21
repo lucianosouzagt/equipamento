@@ -17,6 +17,6 @@
 	    	<label for="pass">Senha:</label>
 	    	<input type="text" class="form-control" name="pass" id="pass" required/>
 	 	</div>
-	 	<button class="btn btn-default" type="submit">Entrar</button>
+	 	<button class="btn btn-block btn-default" type="submit">Entrar</button>
 </form>
 </div>
