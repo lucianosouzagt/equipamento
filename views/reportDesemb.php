@@ -1,4 +1,16 @@
-<h2>Relatorio</h2>
+<?php
+require 'vendor/autoload.php';
+ob_start();
+?>
+<style type="text/css">
+	table{
+		width: 100%
+	}
+	th{
+		text-align: left;
+	}
+</style>
+<h2>Relatorio Equipamento Disponivel</h2>
 <br><br>
 <table class="table table-striped table-hover">
 	<thead class="thead-light">
@@ -7,10 +19,6 @@
 				<th>SERIAL</th>
 				<th>MARCA</th>
 				<th>MODELO</th>
-				<th>FUNCIONARIO</th>
-				<th>DATA EMB.</th>
-				<th>SOLICITANTE</th>
-
 			</tr>
 		</thead>
 		<tbody>
@@ -20,13 +28,20 @@
 				<td><?php echo $item['sn']; ?></td>
 				<td><?php echo $item['marca']; ?></td>
 				<td><?php echo $item['modelo']; ?></td>
-				<td><?php echo $item['name']; ?></td>
-				<td><?php echo $item['data']; ?></td>
-				<td><?php echo $item['solicitante']; ?></td>
 			</tr>
 		<?php endforeach; ?>
 		</tbody>
 </table>
-<script type="text/javascript">
-	window.print();
-</script>
+<?php
+$html = ob_get_contents();
+ob_end_clean();
+
+$mpdf = new mPDF();
+$mpdf->WriteHTML($html);
+$mpdf->Output('equipamento.pdf','I');
+/*
+* I = Abre no Navegador
+* D = Força o Donwload
+* F = Salva no Servidor
+*/
+?>

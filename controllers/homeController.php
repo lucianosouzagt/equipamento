@@ -16,7 +16,9 @@ class homeController extends Controller {
     public function index() {
         $data = array();
         $e =new Embarque();
+        $f =new Equipamentos();
 
+        $data['list1'] = $f->getAllEquipamentos();
         $data['list'] = $e->getAllEmbarque();
 
         $this->loadTemplate('home', $data);

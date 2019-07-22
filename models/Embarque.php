@@ -25,6 +25,30 @@ class Embarque extends Model {
 		return $array;
 	}
 
+	public function getAllHistoricoEmbarque() {
+		$array = array();
+		
+		$sql = "SELECT embarques.id,
+					   equipamentos.bp, 
+					   equipamentos.sn, 
+					   equipamentos.marca, 
+					   equipamentos.modelo, 
+					   funcionarios.name,
+					   data_emb AS data,
+					   solicitante
+		FROM embarques, equipamentos, funcionarios
+		WHERE embarques.funcionario_id = funcionarios.id AND
+			  embarques.equipamento_id = equipamentos.id AND
+			  embarques.situacao = 0";
+		$sql = $this->db->query($sql);
+		
+		if ($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}
+
 	public function getAllFuncionarios() {
 		$array = array();
 		

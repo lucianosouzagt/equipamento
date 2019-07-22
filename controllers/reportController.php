@@ -10,13 +10,35 @@ class reportController extends Controller {
 			exit;
 		}
 	}
-
+	
 	public function index() {
+
+	}
+	public function reportemb() {
 		$data = array();
 		$e =new Embarque();
 
         $data['list'] = $e->getAllEmbarque();
 		
-		$this->loadTemplate('report', $data);
+		$this->loadView('reportEmb', $data);
 	}
+
+	public function reportdesemb() {
+		$data = array();
+		$e =new Equipamentos();
+
+        $data['list'] = $e->getAllEquipamentos();
+		
+		$this->loadView('reportDesemb', $data);
+	}
+
+	public function historico() {
+		$data = array();
+		$e =new Embarque();
+
+        $data['list'] = $e->getAllHistoricoEmbarque();
+		
+		$this->loadView('historico', $data);
+	}
+
 }

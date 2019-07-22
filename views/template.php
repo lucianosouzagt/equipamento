@@ -9,36 +9,6 @@
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
 	</head>
 	<body>
-		<!--<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="<?php echo BASE_URL; ?>">SPARROWS BSM</a>
-			</div>
-				<ul class="nav navbar-nav">
-					<li class="dropdown">
-				    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Cadastros
-				    	<span class="caret"></span></a>
-				    	<ul class="dropdown-menu">
-				      		<li><a href="<?php echo BASE_URL; ?>equipamentos/addequi/">Equipamentos</a></li>
-				      		<li><a href="<?php echo BASE_URL; ?>funcionarios/addfunc/">Funcionarios</a></li>		          
-				      		<li><a href="<?php echo BASE_URL; ?>usuarios/adduser">Usuarios</a></li>
-				    	</ul>
-				  	</li>
-				  	<li class="dropdown">
-				    	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Movimentação
-				    	<span class="caret"></span></a>
-				    	<ul class="dropdown-menu">
-				    	  <li><a href="<?php echo BASE_URL; ?>emprestimo/">Emprestimo de Equipamento</a></li>
-				    	  <li><a href="<?php echo BASE_URL; ?>emprestimo/desembarque/">Devolução de Equipamento</a></li>		          
-				    	</ul>
-				  	</li>
-				  	<li><a href="<?php echo BASE_URL;?>report/">Relatorio</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-				   	<li><a href="<?php echo BASE_URL; ?>login/logout/">Logout</a></li>
-				</ul>
-			</div>
-		</nav>-->
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 <!-- Brand -->
@@ -67,9 +37,15 @@
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>emprestimo/desembarque/">Devolução de Equipamentos</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo BASE_URL;?>report/">Relatorio</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Relatorios</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" target="_blank" href="<?php echo BASE_URL;?>report/reportemb/">Equipamentos Embarcados</a>
+                                <a class="dropdown-item" target="_blank" href="<?php echo BASE_URL;?>report/reportdesemb/">Equipamentos Disponivel</a>
+                                <a class="dropdown-item" target="_blank" href="<?php echo BASE_URL;?>report/historico/">Historico de Embarque</a>
+                            </div>
                         </li>
+                        
                     </ul>
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item">

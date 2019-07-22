@@ -16,7 +16,7 @@ class loginController extends Controller {
 
 				header("Location: ".BASE_URL);
 			} else {
-				$data['msg'] = 'Número e/ou senha errados!';
+				$data['msg'] = 'Usuario e/ou senha errados!';
 			}
 
 		}
