@@ -1,7 +1,7 @@
 <br>
 <div class="table-responsive">
 	<h4>Equipamentos Embarcado</h4>
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-bordered ">
 		<thead class="thead-light">
 			<tr>
 				<th>BP</th>
@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 		<?php foreach($list as $item): ?>
-			<tr>
+			<tr class="tr">
 				<td><?php echo $item['bp']; ?></td>
 				<td><?php echo $item['sn']; ?></td>
 				<td><?php echo $item['marca']; ?></td>
@@ -32,7 +32,7 @@
 <br>
 <div class="table-responsive">
 	<h4>Equipamentos Disponivel</h4>
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-bordered ">
 		<thead class="thead-light">
 			<tr>
 				<th>BP</th>

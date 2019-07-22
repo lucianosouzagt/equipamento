@@ -1,5 +1,5 @@
 <div class="table-responsive">
-	<table class="table table-striped table-bordered table-hover">
+	<table class="table table-bordered">
 		<thead class="thead-light">
 			<tr>
 				<th>BP</th>

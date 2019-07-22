@@ -10,7 +10,7 @@ ob_start();
 <h2>Relatorio</h2>
 <br><br>
 <div class="table-responsive">
-	<table class="table table-striped table-hover" width="800px">
+	<table class="table table-striped" width="800px">
 		<thead class="thead-light">
 				<tr>
 					<th>BP</th>

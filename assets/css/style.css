@@ -11,6 +11,9 @@ a{
 	text-decoration: none;
 	color: #000000;
 }
+table tr:hover{
+	background-color: rgba(105,196,245,0.5);
+}
 
 .button {
 	display: inline-block;
