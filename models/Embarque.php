@@ -182,15 +182,16 @@ class Embarque extends Model {
 			'luciano.souza@sparrowsbsm.com.br',
 			'logistica@sparrowsbsm.com.br'
 		);
-		$msg = "Prezados!\r\n
+		$msg = "Prezados!
 
-				No dia ".$data." o(a) colaborador(a) ".$func." portador(a) do CPF: ".$cpf." e do RG: ".$rg." retirou do Setor de Tecnologia da Informação o(s) seguinte(s) equipamento(s):\r\n
+				No dia ".$data." o(a) colaborador(a) ".$func." portador(a) do CPF: ".$cpf." e do RG: ".$rg." retirou do Setor de Tecnologia da Informação o(s) seguinte(s) equipamento(s):
 
-     			DESCRIÇÃO: ".$modelo.", BP: ".$bp.", N/S: ".$sn."\r\n
+     			DESCRIÇÃO: ".$modelo.", BP: ".$bp.", N/S: ".$sn."
 
-				Atte.\r\n
-				Setor de Tecnologia da Informação"\r\n;
+				Atte.
+				Setor de Tecnologia da Informação";
 		$corpo = "Nome: ".$func." - E-mail: ".$email." - Mensagem: ".$msg;
+		
 		$cabecalho = "From: suporte@etm.srv.br\r\n".
 					 "Reply-To: ".$para."\r\n".
 					 "X-Mailer: PHP/".phpversion();
