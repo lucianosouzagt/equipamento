@@ -49,20 +49,6 @@ class Embarque extends Model {
 		return $array;
 	}
 
-	public function getAllFuncionarios() {
-		$array = array();
-		
-		$sql = "SELECT * FROM funcionarios WHERE embarque = 0";
-		$sql = $this->db->query($sql);
-		
-		if ($sql->rowCount() > 0) {
-			$array = $sql->fetchAll();
-		}
-
-		return $array;
-
-	}
-
 	private function verifyEmbarque($id, $func){
 
 		return true;
@@ -155,5 +141,86 @@ class Embarque extends Model {
 			return false;
 		}
 
+	}
+
+	public function getAllFuncionarios() {
+		$array = array();
+		
+		$sql = "SELECT * FROM funcionarios WHERE embarque = 0";
+		$sql = $this->db->query($sql);
+		
+		if ($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+
+	}
+
+	public function getFuncionarios($id) {
+		$array = array();
+		
+		$sql = "SELECT * FROM funcionarios WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id",$id);
+		$sql->execute();
+		
+		if ($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+
+	}
+
+
+
+	public function mailEmbarque($email, $func, $cpf, $rg, $modelo, $bp, $sn, $data) {
+		$para = $email;
+		$assunto = "Empréstimo de Equipamento";
+		$cc = array(
+			'luciano.souza@sparrowsbsm.com.br',
+			'logistica@sparrowsbsm.com.br'
+		);
+		$msg = "Prezados!\r\n
+
+				No dia ".$data." o(a) colaborador(a) ".$func." portador(a) do CPF: ".$cpf." e do RG: ".$rg." retirou do Setor de Tecnologia da Informação o(s) seguinte(s) equipamento(s):\r\n
+
+     			DESCRIÇÃO: ".$modelo.", BP: ".$bp.", N/S: ".$sn."\r\n
+
+				Atte.\r\n
+				Setor de Tecnologia da Informação"\r\n;
+		$corpo = "Nome: ".$func." - E-mail: ".$email." - Mensagem: ".$msg;
+		$cabecalho = "From: suporte@etm.srv.br\r\n".
+					 "Reply-To: ".$para."\r\n".
+					 "X-Mailer: PHP/".phpversion();
+
+		mail($para, $assunto, $corpo, $cabecalho);
+		return true;
+
+	}
+
+	public function mailDesembarque($email, $func, $cpf, $rg, $modelo, $bp, $sn, $data) {
+		$para = $email;
+		$assunto = "Empréstimo de Equipamento";
+		$cc = array(
+			'luciano.souza@sparrowsbsm.com.br',
+			'logistica@sparrowsbsm.com.br'
+		);
+		$msg = "Prezados!
+
+				No dia ".$data." o(a) colaborador(a) ".$func." portador(a) do CPF: ".$cpf." e do RG: ".$rg." entregou do Setor de Tecnologia da Informação o(s) seguinte(s) equipamento(s):
+
+     			DESCRIÇÃO: ".$modelo.", BP: ".$bp.", N/S: ".$sn."
+
+				Atte.
+				Setor de Tecnologia da Informação";
+		$corpo = "Nome: ".$func." - E-mail: ".$email." - Mensagem: ".$msg;
+		$cabecalho = "From: suporte@etm.srv.br\r\n".
+					 "Reply-To: ".$para."\r\n".
+					 "X-Mailer: PHP/".phpversion();
+
+		mail($para, $assunto, $corpo, $cabecalho);
+		return true;
 	}
 }

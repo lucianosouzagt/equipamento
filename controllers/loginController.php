@@ -20,7 +20,7 @@ class loginController extends Controller {
 			}
 
 		}
-		$this->loadTemplate('login', $data);
+		$this->loadView('login', $data);
 	}
 
 	public function logout() {

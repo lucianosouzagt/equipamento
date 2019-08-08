@@ -30,19 +30,31 @@ class emprestimoController extends Controller {
         $data['list'] = $e->getEquipamento($id);
         $data['info'] = $f->getAllFuncionarios();
 
+
         if (!empty($_POST['func'])) {
             $func = filter_input(INPUT_POST,'func', FILTER_VALIDATE_INT);
             $solicitante = filter_input(INPUT_POST,'solicitante', FILTER_SANITIZE_STRING);
-            
+            $data['mail'] = $f->getFuncionarios($func);
+            $email = $mail['email'];
+            $nome = $mail['nome'];
+            $cpf = $mail['cpf'];
+            $rg = $mail['rg'];
+            $modelo = $list['modelo'];
+            $bp = $list['bp'];
+            $sn = $list['sn'];
+            date_default_timezone_set('America/Sao_Paulo');
+            $date = date('Y-m-d');
+
 
             if ($id && $func && $solicitante) {
                 $f->addEmbarque($id, $func, $solicitante);
-            
+                $f->mailEmbarque($email, $func, $cpf, $rg, $modelo, $bp, $sn);
                 header("Location: ".BASE_URL);
             } else {
                 $data['wanrning'] = 'Digite os campos corretamente.';
             }
         }
+
 
         $this->loadTemplate('embarque', $data);
     }

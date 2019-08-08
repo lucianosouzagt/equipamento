@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Sparrows BSM</title>
+		<link rel="shortcut icon" href="<?php echo BASE_URL; ?>assets/images/etm.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css">
@@ -47,7 +48,7 @@
                         </li>
                         
                     </ul>
-                    <ul class="navbar-nav navbar-right">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo BASE_URL; ?>login/logout/">Logout</a>
                         </li>
